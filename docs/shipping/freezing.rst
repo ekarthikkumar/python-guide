@@ -40,8 +40,43 @@ cx_Freeze   yes     yes   yes  yes      PSF     no            yes            yes
     Only Pyinstaller makes self-executable exe that bundles the dll when
     passing ``--onefile`` to `Configure.py`.
 
+
 Windows
 -------
+
+
+cx_Freeze
+~~~~~~~~~
+
+Prerequisite is to install :ref:`Python, and the modules required to run your python scripts <install-windows>`.
+
+cx_Freeze is a module used to create the python scripts into an executable(.exe) file. It is very easy method.
+
+1. Download and install cx_Freeze windows binary for your python version from http://www.lfd.uci.edu/~gohlke/pythonlibs/ (at this site you can download hundreds of python modules in windows binary format. So it is worth visiting it even if you don't need cx_Freeze). 
+
+2. Find the location of the your source code folder. for example- I created a test.py and stored it in c:\\samp.
+
+::
+
+    #c:\samp\test.py
+	x="hai this is an exe file created from python scripts using cxfreeze. Press Enter to exit >> "
+	y=input(x)
+	
+3. Create a folder to store the build file(.exe and other files). for eg- i created a folder c:\\samp\\build\
+
+4. Open Command Prompt(start->run type "cmd" press enter) and type 
+
+.. code-block:: console
+
+	C:\Documents and Settings\suh>c:\python32\scripts\cxfreeze c:\samp\test.py --target-dir=c:\samp\build
+
+The first word stand for the path of cxfreeze software(note python32 stands for Python 3.2 version, you must replace it with your python version. ie-python26,python27,python32 etc), next word for the main python source code file and the third word for the destination directory of build files(ie .exe and other files)
+
+for more options type
+
+::
+
+	C:\Documents and Settings\suh>c:\python32\scripts\cxfreeze -help
 
 bbFreeze
 ~~~~~~~~
